@@ -11,30 +11,58 @@ public class OddEvenCounter
 
    public OddEvenCounter()
    {
+	   setLine("");
    }
 
    public OddEvenCounter(String s)
    {
+	   setLine(s);
    }
 
 	public void setLine(String s)
 	{
+		line = s;
 	}
 
 	public int getEvenCount()
 	{
+		
 		int count= 0;
+		Scanner S1 = new Scanner(line);
+		while(S1.hasNextInt())
+		{
+			if((S1.nextInt()%2)==0)
+			{
+
+				count++;
+			}
+		}
 		return count;
 	}
 
 	public int getOddCount()
 	{
 		int count= 0;
+		Scanner S1 = new Scanner(line);
+		while(S1.hasNextInt())
+		{
+			if((S1.nextInt()%2)==1)
+			{
+
+				count++;
+			}
+		}
 		return count;
 	}
+	public String getAns()
+	{
+		return "Even Count = "+getEvenCount()+"\nOdd  Count = "+getOddCount();
+	}
+			
+	
 
 	public String toString( )
 	{
-		return "";
+		return getAns();
 	}
 }
